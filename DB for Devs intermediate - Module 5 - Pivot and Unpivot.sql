@@ -36,7 +36,7 @@ pivot (
 );
 
 /*Implicit group by clause formed by input columns that specified in the pivot table
-	• Can lead to more output rows than expected
+	• More output rows than expected because column(s) not listed in in clause but appears in results
 	• Resolve by using inline view or CTE to select only the columns to be pivoted*/
 
 /*Can use expressions to manipulate values to be pivoted
@@ -87,7 +87,8 @@ pivot (
 
 /*Unpivoting takes columns and converts them to rows
 	• One approach is to union all
-	• Or, use unpivot clause (req Oracle db +11g)*/
+	• Or, use unpivot clause (req Oracle db +11g)
+	• Cannot use aggregate functions*/
 
 --Syntax for unpivot clause
 

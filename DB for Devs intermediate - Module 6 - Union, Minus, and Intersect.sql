@@ -83,10 +83,10 @@ order	by colour;
 
 select	col1, col2, sum(table1), sum(table2) 
 from	(
-	select	col1, col2, 1 table1, 0 table2	--returns 1|0 to sum totals for each column
+	select	col1, col2, 1 table1, 0 table2	--returns 1|0 for each column for each table, to sum later
 	from	table1
 	union	all
-	select	col1, col2, 0 table1, 1 table2
+	select	col1, col2, 0 table1, 1 table2	--needs both tables for parity when unioning
 	from	table2
 )
 group	by col1, col2
